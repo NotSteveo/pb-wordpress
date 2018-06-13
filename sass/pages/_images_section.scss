@@ -1,0 +1,92 @@
+.blog-roll {
+      padding-bottom: 3rem;
+}
+.blog-wrapper{
+    .more-title{
+      @include for-tablet-small-down {
+        margin-bottom: 2rem;
+      }
+        padding:4rem 0 0;
+        margin-bottom: 2%;
+        margin-left: 3%;
+        color: $red;
+        letter-spacing: 0.95px;
+        word-spacing: .5px;
+        line-height: 1.6;
+        font-family: $bold;
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+    background-color: #20344c;
+    justify-content: center;
+    // margin-right: -15px;
+    .row{
+        padding: 0 2% 0% 3%;
+        .bottom-image{
+          @include for-tablet-small-down {
+            margin-bottom:3rem;
+          }
+            color: white;
+            .image {
+              min-height: 175px;
+              width:100%;
+              background-size: cover;
+              -webkit-background-size: cover;
+              -moz-background-size: cover;
+              -o-background-size: cover;
+            }
+            .more-sub{
+                margin-top: 10%;
+                @include for-tablet-down {
+                  margin-top:0;
+                }
+                .more-sub-title{
+                    font-family: $bold;
+                    letter-spacing: 0.95px;
+                    word-spacing: .5px;
+                    font-size: 18px;
+                }
+                .more-sub-content{
+                    font-family: $light;
+                    margin: 10% 0;
+                    letter-spacing: 0.95px;
+                    word-spacing: .5px;
+                    font-size: 14px;
+                }
+                .more-link{
+                    a {
+                      position: absolute;
+                      bottom: 0;
+                      text-decoration: none;
+                      color: $red;
+                      &hover {
+                        text-decoration: none;
+                      }
+                    }
+                    display: flex;
+                    justify-content: flex-end;
+                    .link{
+                        letter-spacing: 0.95px;
+                        word-spacing: .5px;
+                        font-size: 17px;
+                        color: $red;
+                        font-family: $semi;
+                        margin-right: 2%;
+                        align-self: center;
+                        transition: $transition;
+                        &:hover {
+                          color:lighten($red, 20%);
+                        }
+                    }
+                }
+                .more-splitter{
+                    display: block;
+                    height: 1px;
+                    border: 0;
+                    border-top: 1px solid #ccc;
+                    padding: 0;
+                }
+            }
+        }
+    }
+}

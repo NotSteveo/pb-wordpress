@@ -1,0 +1,49 @@
+.case-study{
+    .group-image{
+        width: 100%;
+    }
+    .white{
+        height: 50%;
+        .overlay{
+            padding: 5%;
+            background: #FFFFFF;
+            box-shadow: 4px 4px 24px 0 rgba(0,0,0,0.07);
+            position: relative;
+            margin:0 auto;
+            @include for-tablet-small-up {
+              border-radius: 5px;
+              width: 95%;
+            }
+            @include for-desktop-up {
+              top: 30%;
+              width: 60%;
+            }
+            .overlay-header{
+                margin: 0px 0px 7% 0px;
+                font-size: 1.2rem;
+                color: $dark-blue;
+                letter-spacing: 0.65px;
+                font-family: $bold;
+            }
+            .splitter{
+                margin-right: 70%;
+            }
+            .overlay-content{
+                font-size: 14px;
+                margin-top: 7%;
+                word-spacing: .5px;
+                letter-spacing: 0.65px;
+                line-height: 28px;
+                font-family: $light;
+                color:$dark-gray;
+            }
+        }
+    }
+    .orange{
+        height: 50%;
+        background-color: #E5665D;
+    }
+}
+.cut-padding{
+    padding: 0px;
+}

@@ -1,0 +1,97 @@
+$transition: 500ms;
+body {
+  overflow-x: hidden;
+  font-family: $regular;
+}
+html {
+  font-family: $regular;
+}
+a, p, h1, h2, h3, h4 ,h6, div, nav {
+  font-family: $regular;
+}
+.container-fluid {
+  @include for-wide-desktop-up {
+  max-width: 1440px !important;
+  }
+}
+
+.penblade-logo{
+    height: 25px;
+}
+.top .navbar-nav li:last-of-type a{
+  @extend .btn;
+}
+.purple, .top .navbar-nav li:last-of-type a{
+    background-color: $blue;
+    color: white !important;
+    font-family: "Muli-Regular";
+    padding: 10px 20px !important;
+    letter-spacing: 0.44px;
+    transition: 500ms;
+    &:hover {
+      background-color:lighten($blue, 10%);
+    }
+    &.small-text {
+      font-size: 11px;
+    }
+}
+.flex{
+    display: flex;
+    background-color: white !important;
+}
+.flex-bottom{
+    display: flex;
+    background-color: white !important;
+    justify-content: space-between;
+}
+.nav-right{
+    justify-content: flex-end;
+}
+.blue{
+    color: $blue;
+    padding: 10px 20px;
+    letter-spacing: 0.44px;
+    transition: $transition;
+    &:hover {
+      color:lighten($blue, 10%);
+    }
+}
+.spacing{
+    padding: 10px 25px;
+}
+.black{
+    color: black !important;
+    letter-spacing: 0.44px;
+    padding: 10px 20px;
+}
+body {
+  font-family: $regular;
+}
+h1 {
+  color:$red;
+  font-family: $bold;
+  font-size: 18px;
+}
+h2 {
+  color:$red;
+  font-family: $bold;
+  font-size: 18px;
+}
+h3 {
+  color:$dark-blue;
+  font-family: $bold;
+  font-size: 18px;
+}
+h4 {
+  color:$dark-blue;
+  font-family: $bold;
+  font-size: 14px;
+}
+p {
+  font-family: $light;
+  font-size: 14px;
+}
+a {
+  color: $blue;
+  font-family: $light;
+}

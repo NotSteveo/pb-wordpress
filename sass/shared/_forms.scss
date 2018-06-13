@@ -1,0 +1,136 @@
+.contact-form-card {
+  max-width: 540px;
+  background: #FBFCFE;
+  border: 0 solid #D6D6D6;
+  box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.07);
+  border-radius: 0 0 5px 5px;
+  padding: 20px 25px;
+  margin: 0 auto;
+  margin-bottom: -2rem;
+  @include for-tablet-small-down {
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+}
+.contact-form-card-modal {
+  padding: 15px;
+}
+.contact-form-card-modal, .contact-form-card {
+  @include for-phone-only {
+    width: 100%;
+    max-width: none;
+  }
+  .center {
+    display: block;
+    margin:1rem auto;
+  }
+
+  h3.contact-form-header {
+    font-family: "Muli-Bold";
+    font-size: 12px;
+    color: $black;
+    letter-spacing: 0.44px;
+  }
+
+  h4.form-info {
+    font-family: "Muli-Regular";
+    font-size: 12px;
+    color: $black;
+    letter-spacing: 0.36px;
+    text-align: center;
+  }
+
+  form {
+    .form-row {
+      display: flex;
+      justify-content: space-between;
+      @include for-phone-only {
+        flex-direction: column;
+      }
+
+      .form-group {
+        input {
+          height: 30px;
+          font-family: "Muli-Regular";
+          font-size: 12px;
+          padding: 10px;
+        }
+
+        label {
+          font-family: "Muli-Regular";
+          font-size: 13px;
+          color: $black;
+          letter-spacing: 0.36px;
+          margin-bottom: 0;
+        }
+
+        textarea {
+          resize: none;
+          font-family: "Muli-Regular";
+          font-size: 12px;
+          padding: 10px;
+        }
+
+        &.facility {
+          width: 37.5%;
+          @include for-phone-only {
+            width: 100%;
+          }
+        }
+
+        &.city {
+          width: 37.5%;
+          @include for-phone-only {
+            width: 100%;
+          }
+        }
+
+        &.state {
+          width: 15%;
+          @include for-phone-only {
+            width: 100%;
+          }
+        }
+
+        &.first_name {
+          width: 30%;
+          @include for-phone-only {
+            width: 100%;
+          }
+        }
+
+        &.last_name {
+          width: 30%;
+          @include for-phone-only {
+            width: 100%;
+          }
+        }
+
+        &.title {
+          width: 30%;
+          @include for-phone-only {
+            width: 100%;
+          }
+        }
+
+        &.phone {
+          width: 45%;
+          @include for-phone-only {
+            width: 100%;
+          }
+        }
+
+        &.email {
+          width: 45%;
+          @include for-phone-only {
+            width: 100%;
+          }
+        }
+
+        &.more-about-us {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

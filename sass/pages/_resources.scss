@@ -1,0 +1,147 @@
+.downloads.features-header .features-header-text-container .features-header-text {
+    @include for-wide-desktop-down {
+      padding:30px 30px;
+      }
+    }
+.download {
+  background: $light-gray;
+  display: flex;
+  justify-content: center;
+  min-height:475px;
+  align-items: center;
+  @include for-phone-only {
+    flex: 1;
+    flex-direction: column;
+  }
+  @include for-tablet-down {
+    min-height:450px;
+  }
+  @include for-tablet-small-down {
+    min-height: 50vh;
+  }
+  .resources-splitter-top, .resources-splitter {
+    background: $white;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-right: 85%;
+  }
+  .download-container {
+    background: $white;
+    margin: 15px;
+    padding: 30px;
+    border: .25px solid #D6D6D6;
+    box-shadow: 4px 4px 24px 0 rgba(0,0,0,0.07);
+    border-radius: 2px;
+    max-width: 350px;
+    width: 100%;
+    min-height: 260px;
+    position: relative;
+    h2 {
+      color:$dark-blue;
+    }
+    .link-container {
+      position: absolute;
+      bottom: 6%;
+      right: 6%;
+    }
+  }
+}
+
+.resources-hero {
+  min-height:406px;
+  .features-header {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+  }
+  .resources-header-text-container{
+
+  }
+  .resources-header-text {
+    padding: 60px;
+  }
+  .resources-header-large-text {
+
+  }
+  .resources-header-small-text {
+    p {
+      color: $white;
+    }
+    a {
+      color: $blue;
+    }
+  }
+}
+.resources {
+  margin-top:7rem;
+  .post {
+    .resources-splitter-top {
+      margin-top: 5%;
+      margin-bottom: 5%;
+      margin-right: 85%;
+    }
+  }
+  .title {
+    top: -2rem;
+    position: relative;
+    h4 {
+      font-family: $bold;
+      font-size: 21px;
+      color: $red;
+    }
+  }
+  .resources-blog:last-of-type {
+    margin-bottom: 0;
+  }
+  .resources-blog {
+    margin-bottom: 5rem;
+    .resources-splitter-top {
+      width:75px;
+      background: $white;
+    }
+    .image {
+      margin-bottom: 2rem;
+      text-align: right;
+    padding-right: 2rem;
+    }
+    img {
+    width: 100%;
+    border-radius: 15px;
+    border: none;
+    position: relative;
+    @include for-desktop-up {
+      }
+    }
+  }
+  .read {
+    text-align: right;
+    @include for-tablet-small-up {
+      text-align: left;
+    }
+    .resources-link {
+      top: 11px;
+      position: relative;
+      padding-right: -35px;
+      margin-right: 0rem;
+      @include for-tablet-small-up {
+          width: 65%;
+          display: inline-block;
+      }
+      @include for-tablet-up {
+          width: 70%;
+          display: inline-block;
+      }
+    }
+    a {
+      margin-left:15px;
+      color: $blue;
+      font-family: $semi;
+      transition: $transition;
+      &:hover {
+        text-decoration: none;
+        color: lighten($blue, 10%);
+      }
+    }
+  }
+}
