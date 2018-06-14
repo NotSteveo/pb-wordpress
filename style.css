@@ -12451,3 +12451,11 @@ ul.navitem {
 .blog-post {
   margin-bottom: 2rem;
 }
+
+@media (min-width: 769px) {
+  /* line 1092, sass/_pages.scss */
+  .copyright-container {
+    position: absolute;
+    right: 2rem;
+  }
+}

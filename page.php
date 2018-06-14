@@ -88,9 +88,9 @@ get_header();
 </div>
 
 <?php
-	if( have_rows('page_hero') ):
-		while ( have_rows('page_hero') ) : the_row();
-		if (get_row_layout() == 'page_text_image' ): ?>
+  if( have_rows('page_hero') ):
+  while ( have_rows('page_hero') ) : the_row();
+  if (get_row_layout() == 'page_text_image' ): ?>
 <div class="features-hero">
    <div class="container-fluid">
       <div class="row features-header no-margin">
@@ -161,8 +161,7 @@ get_header();
                  <hr class="resources-splitter-top">
                  <p><?php the_sub_field('page_card_left_caption'); ?></p>
                 <div class="link-container">
-                  <?php $file_left = get_sub_field('page_card_left_link'); ?>
-                 <a href="<?php echo $file_left['url']; ?>" target="_blank"><span class="button-chev-blue"><?php the_sub_field('page_card_left_link_title'); ?></span></a>
+                 <a href="<?php the_sub_field('page_card_left_link'); ?>" target="_blank"><span class="button-chev-blue"><?php the_sub_field('page_card_left_link_title'); ?></span></a>
                </div>
               </div>
               <div class="download-container">
@@ -171,23 +170,20 @@ get_header();
                  <p><?php the_sub_field('page_card_right_caption'); ?></p>
 
                 <div class="link-container">
-                  <?php $file_right = get_sub_field('page_card_left_link'); ?>
-                 <a href="<?php echo $file_right['url']; ?>" target="_blank"><span class="button-chev-blue"><?php the_sub_field('page_card_right_link_title'); ?></span></a>
+                 <a href="<?php the_sub_field('page_card_right_link'); ?>" target="_blank"><span class="button-chev-blue"><?php the_sub_field('page_card_right_link_title'); ?></span></a>
                </div>
               </div>
            </div>
         </div>
      </div>
   </div>
-<?php endif; ?>
-<?php endwhile; ?><!--end features module -->
+<?php endif; endwhile; ?><!--end features module -->
 <?php endif; ?>
 
 <?php
-	if( have_rows('main_modules') ):
-		while ( have_rows('main_modules') ) : the_row();
-		if (get_row_layout() == 'hero' ): ?>
-			<?php if( have_rows('hero_field') ): ?>
+  if( have_rows('main_modules') ):
+  while ( have_rows('main_modules') ) : the_row();
+  if (get_row_layout() == 'hero' ): if( have_rows('hero_field') ): ?>
         <div class="cd-slider container-fluid">
           <div class="overlay-rotate" style=""></div>
           <ul class="slides">
@@ -209,42 +205,40 @@ get_header();
 <?php endwhile; ?>
           </ul>
         </div> <!--/.cd-slider-->
-					<?php endif; ?>
-					<!-- 4 cards -->
-				<?php elseif (get_row_layout() == 'featured_text' ): ?>
-						<?php if( have_rows('featured_collection') ): ?>
-							<section class="container-fluid">
-								<div class="row values">
-								<?php while( have_rows('featured_collection') ): the_row(); ?>
-										<div class="col-sm-6 col-lg-3 value-point-container">
-									<?php $featured_image = get_sub_field('featured_image'); ?>
-									<div class="value-point">
-									<div class="value-point-title my-3">
-						         <div class="image"><img src="<?php echo $featured_image['url']; ?>" alt="<?php echo $featured_image['alt']; ?>"></div>
-											<h2 class="text"><?php the_sub_field('featured_title'); ?></h2></div>
-											<hr class="value-splitter">
+  <?php endif; ?>
+  <!-- 4 cards -->
+  <?php elseif (get_row_layout() == 'featured_text' ): if( have_rows('featured_collection') ): ?>
+  <section class="container-fluid">
+  <div class="row values">
+  <?php while( have_rows('featured_collection') ): the_row(); ?>
+  <div class="col-sm-6 col-lg-3 value-point-container">
+  <?php $featured_image = get_sub_field('featured_image'); ?>
+  <div class="value-point">
+  <div class="value-point-title my-3">
+           <div class="image"><img src="<?php echo $featured_image['url']; ?>" alt="<?php echo $featured_image['alt']; ?>"></div>
+  <h2 class="text"><?php the_sub_field('featured_title'); ?></h2></div>
+  <hr class="value-splitter">
 
-											<div class="value-point-content my-3">
-					 	            <p class="text"><?php the_sub_field('featured_description'); ?></p></div>
+  <div class="value-point-content my-3">
+                 <p class="text"><?php the_sub_field('featured_description'); ?></p></div>
 
-										</div>
-									</div>
-										<?php endwhile; ?>
-										<?php while( have_rows('featured_cta_button') ): the_row(); ?>
-											<div class="request-sample-container">
-												<a href="<?php the_sub_field('featured_cta_link'); ?>" data-toggle="modal" data-target="#exampleModal"><span class="button-chev"><?php the_sub_field('featured_cta'); ?></span></a>
+  </div>
+  </div>
+  <?php endwhile; while( have_rows('featured_cta_button') ): the_row(); ?>
+  <div class="request-sample-container">
+
+  <a href="<?php the_sub_field('featured_cta_link'); ?>"><span class="button-chev"><?php the_sub_field('featured_cta'); ?></span></a>
 
 
-											</div>
-											<?php endwhile; ?>
+  </div>
+  <?php endwhile; ?>
 
-									</div>
-								</section>
-								<?php endif; ?>
-								<!-- 4 cards -->
+  </div>
+  </section>
+  <?php endif; ?>
+  <!-- 4 cards -->
                 <!-- 3 cards -->
-              <?php elseif (get_row_layout() == 'featured_text_three' ): ?>
-                  <?php if( have_rows('featured_collection') ): ?>
+              <?php elseif (get_row_layout() == 'featured_text_three' ): if( have_rows('featured_collection') ): ?>
                     <section class="container-fluid">
                       <div class="row values">
                       <?php while( have_rows('featured_collection') ): the_row(); ?>
@@ -261,8 +255,7 @@ get_header();
 
                           </div>
                         </div>
-                          <?php endwhile; ?>
-                          <?php while( have_rows('featured_cta_button') ): the_row(); ?>
+                          <?php endwhile; while( have_rows('featured_cta_button') ): the_row(); ?>
                             <div class="request-sample-container">
                               <a href="<?php the_sub_field('featured_cta_link'); ?>" data-toggle="modal" data-target="#exampleModal"><span class="button-chev"><?php the_sub_field('featured_cta'); ?></span></a>
 
@@ -275,130 +268,119 @@ get_header();
                       <?php endif; ?>
                       <!-- 3 cards -->
 
-					<?php elseif (get_row_layout() == 'homepage_links_to_pages' ): ?>
-					<section class="container-fluid cards-container">
-						<div class="row resources m-auto">
-						<?php if( have_rows('homepage_video') ): ?>
-              <?php while( have_rows('homepage_video') ): the_row(); ?>
+  <?php elseif (get_row_layout() == 'homepage_links_to_pages' ): ?>
+  <section class="container-fluid cards-container">
+  <div class="row resources m-auto">
+  <?php if( have_rows('homepage_video') ): while( have_rows('homepage_video') ): the_row(); ?>
               <?php $video_gif = get_sub_field('video_gif'); ?>
-						<div class="col-sm-12 col-lg-4 video-banner embed-responsive embed-responsive-4by3" style="background: url(<?php echo $video_gif['url']; ?>) no-repeat center center; background-size: cover;">
+  <div class="col-sm-12 col-lg-4 video-banner embed-responsive embed-responsive-4by3" style="background: url(<?php echo $video_gif['url']; ?>) no-repeat center center; background-size: cover;">
 
                  <button type="button" class="video-button" data-toggle="modal" data-video="<?php the_sub_field('video_url'); ?>" data-target="#myModal">
                    <img src="<?php bloginfo('template_url')?>/images/play.svg">
                  </button>
 
-						</div>
-						<?php endwhile; ?>
-					<?php endif; ?>
-					<?php if( have_rows('red_card') ): ?>
-						<div class="col-md-6 col-lg-3 card-container">
-							<?php while( have_rows('red_card') ): the_row(); ?>
-							 <div class="card red">
-									<h2 class="card-title"> <?php the_sub_field('red_card_title'); ?></h2>
-									<hr class="card-splitter how-to-order-splitter">
-									<p class="card-content"><?php the_sub_field('red_card_body'); ?></p>
-									<div class="card-link"><a href="<?php the_sub_field('red_card_link_url'); ?>"><span class="button-chev"><?php the_sub_field('red_card_link_text'); ?></span></a> </div>
-							 </div>
-						</div>
-					<?php endwhile; ?>
-				<?php endif; ?>
-				<?php if( have_rows('blue_card') ): ?>
-					<div class="col-md-6 col-lg-3 card-container blue resource-container">
-						<?php while( have_rows('blue_card') ): the_row(); ?>
-						 <div class="card resource">
-								<h2 class="card-title resource-title"> <?php the_sub_field('blue_card_title'); ?></h2>
-								<hr class="card-splitter resource-splitter">
-								<p class="card-content resource-content"><?php the_sub_field('blue_card_body'); ?></p>
-								<div class="card-link order-here"><a href="<?php the_sub_field('blue_card_link_url'); ?>"><span class="button-chev"><?php the_sub_field('blue_card_link_text'); ?></span></a> </div>
-						 </div>
-					</div>
-				<?php endwhile; ?>
-			<?php endif; ?>
-		</div>
-	</section>
-						<!-- end cards module-->
+  </div>
+  <?php endwhile; endif; ?>
+  <?php if( have_rows('red_card') ): ?>
+  <div class="col-md-6 col-lg-3 card-container">
+  <?php while( have_rows('red_card') ): the_row(); ?>
+   <div class="card red">
+  <h2 class="card-title"> <?php the_sub_field('red_card_title'); ?></h2>
+  <hr class="card-splitter how-to-order-splitter">
+  <p class="card-content"><?php the_sub_field('red_card_body'); ?></p>
+  <div class="card-link"><a href="<?php the_sub_field('red_card_link_url'); ?>"><span class="button-chev"><?php the_sub_field('red_card_link_text'); ?></span></a> </div>
+   </div>
+  </div>
+  <?php endwhile; endif; ?>
+  <?php if( have_rows('blue_card') ): ?>
+  <div class="col-md-6 col-lg-3 card-container blue resource-container">
+  <?php while( have_rows('blue_card') ): the_row(); ?>
+   <div class="card resource">
+  <h2 class="card-title resource-title"> <?php the_sub_field('blue_card_title'); ?></h2>
+  <hr class="card-splitter resource-splitter">
+  <p class="card-content resource-content"><?php the_sub_field('blue_card_body'); ?></p>
+  <div class="card-link order-here"><a href="<?php the_sub_field('blue_card_link_url'); ?>"><span class="button-chev"><?php the_sub_field('blue_card_link_text'); ?></span></a> </div>
+   </div>
+  </div>
+  <?php endwhile; endif; ?>
+  </div>
+  </section>
+  <!-- end cards module-->
 
-					<?php elseif (get_row_layout() == 'accreditation' ): ?>
-					<section class="container-fluid">
-						<div class="row testimonials">
-						<?php if( have_rows('accreditation_field') ): ?>
-							<div class="col-sm-12 col-md-6 accredidation">
-							<?php while( have_rows('accreditation_field') ): the_row(); ?>
+  <?php elseif (get_row_layout() == 'accreditation' ): ?>
+  <section class="container-fluid">
+  <div class="row testimonials">
+  <?php if( have_rows('accreditation_field') ): ?>
+  <div class="col-sm-12 col-md-6 accredidation">
+  <?php while( have_rows('accreditation_field') ): the_row(); ?>
 
-							<?php $accreditation_image = get_sub_field('accreditation_image'); ?>
-					       <div class="comment">
-					          <div class="avatar-container"><img src="<?php echo $accreditation_image['url'] ?>" alt="<?php echo $accreditation_image['alt'] ?>"></div>
-									 <div class="content-container">
-											<div class="name-container">
-												 <div class="name"><?php the_sub_field('accreditation_name'); ?></div>
-												 <div class="accredidation"><?php the_sub_field('accreditation_title'); ?></div>
-											</div>
-											<div class="text"><?php the_sub_field('accreditation_quote'); ?></div>
-									 </div>
-								</div>
+  <?php $accreditation_image = get_sub_field('accreditation_image'); ?>
+         <div class="comment">
+            <div class="avatar-container"><img src="<?php echo $accreditation_image['url'] ?>" alt="<?php echo $accreditation_image['alt'] ?>"></div>
+   <div class="content-container">
+  <div class="name-container">
+   <div class="name"><?php the_sub_field('accreditation_name'); ?></div>
+   <div class="accredidation"><?php the_sub_field('accreditation_title'); ?></div>
+  </div>
+  <div class="text"><?php the_sub_field('accreditation_quote'); ?></div>
+   </div>
+  </div>
 
-						<?php endwhile; ?>
-						</div>
-					<?php endif; ?>
+  <?php endwhile; ?>
+  </div>
+  <?php endif; ?>
 
-						<?php if( have_rows('extra_links') ): ?>
-							 <div class="col-sm-12 col-md-6 another-point">
-								<?php while( have_rows('extra_links') ): the_row(); ?>
-									<?php $extra_icon = get_sub_field('extra_icon'); ?>
+  <?php if( have_rows('extra_links') ): ?>
+   <div class="col-sm-12 col-md-6 another-point">
+  <?php while( have_rows('extra_links') ): the_row(); ?>
+  <?php $extra_icon = get_sub_field('extra_icon'); ?>
 
-									<div class="comment">
-						         <div class="container-text">
-						            <div class="image"><img src="<?php echo $extra_icon['url'] ?>" alt="<?php echo $extra_icon['alt'] ?>"></div>
-												<div class="text-container">
-						               <div class="text">
-														 <?php the_sub_field('extra_caption'); ?></div>
-						               <hr class="comment-splitter">
-						            </div>
-						         </div>
-						         <div class="link"><a href="<?php the_sub_field('extra_link'); ?>"><span class="button-chev-blue"><?php echo the_sub_field('extra_cta'); ?></span></a></div>
-						      </div>
+  <div class="comment">
+           <div class="container-text">
+              <div class="image"><img src="<?php echo $extra_icon['url'] ?>" alt="<?php echo $extra_icon['alt'] ?>"></div>
+  <div class="text-container">
+                 <div class="text">
+   <?php the_sub_field('extra_caption'); ?></div>
+                 <hr class="comment-splitter">
+              </div>
+           </div>
+           <div class="link"><a href="<?php the_sub_field('extra_link'); ?>"><span class="button-chev-blue"><?php echo the_sub_field('extra_cta'); ?></span></a></div>
+        </div>
 
-						<?php endwhile; ?>
-						</div>
+  <?php endwhile; ?>
+  </div>
 
-			<?php endif; ?>
-		</div>
-	</section> <!-- end accredidation -->
+  <?php endif; ?>
+  </div>
+  </section> <!-- end accredidation -->
 
 <?php elseif (get_row_layout() == 'case_study' ): ?>
-	<div class="case-study">
-	   <div class="container-fluid">
-	      <div class="row">
-	         <div class="col-sm-12 col-md-6 cut-padding">
-
-
+  <div class="case-study">
+     <div class="container-fluid">
+        <div class="row">
+           <div class="col-sm-12 col-md-6 cut-padding">
              <a href="<?php the_permalink(); ?>">
                <?php $main_image = get_sub_field('main_image'); ?>
              <div class="group-image" style="background: url(<?php echo $main_image['url'] ?>) no-repeat center center; background-size: cover;"></div></a>
-
-
-
-						 <?php $case_study_image = get_sub_field('case_study_image'); ?>
-						 <img class="group-image" src="<?php echo $case_study_image['url'] ?>" alt="<?php echo $case_study_image['alt'] ?>"></div>
-	         <div class="col-sm-12 col-md-6 cut-padding">
-	            <div class="white">
-	               <div class="overlay">
-	                  <div class="overlay-header"><?php the_sub_field('case_study_title'); ?></div>
-	                  <hr class="splitter">
-	                  <div class="overlay-content"><?php the_sub_field('case_study_caption'); ?>
-										<div class="link-container"><a href="<?php the_sub_field('case_study_link'); ?>"><span class="button-chev-blue"><?php echo the_sub_field('case_study_link_text'); ?></a></div> </div>
-	               </div>
-	            </div>
-	            <div class="orange"></div>
-	         </div>
-	      </div>
-	   </div>
-	</div>
+   <?php $case_study_image = get_sub_field('case_study_image'); ?>
+   <img class="group-image" src="<?php echo $case_study_image['url'] ?>" alt="<?php echo $case_study_image['alt'] ?>"></div>
+           <div class="col-sm-12 col-md-6 cut-padding">
+              <div class="white">
+                 <div class="overlay">
+                    <div class="overlay-header"><?php the_sub_field('case_study_title'); ?></div>
+                    <hr class="splitter">
+                    <div class="overlay-content"><?php the_sub_field('case_study_caption'); ?>
+  <div class="link-container"><a href="<?php the_sub_field('case_study_link'); ?>"><span class="button-chev-blue"><?php echo the_sub_field('case_study_link_text'); ?></a></div> </div>
+                 </div>
+              </div>
+              <div class="orange"></div>
+           </div>
+        </div>
+     </div>
+  </div>
 
   <!--test-->
-<?php elseif (get_row_layout() == 'show_featured_posts' ): ?>
-  <?php if( get_sub_field('show_featured') ): ?>
-    <?php
+<?php elseif (get_row_layout() == 'show_featured_posts' ): if( get_sub_field('show_featured') ):
        // the query
        $the_query = new WP_Query( array(
          'category_name' => 'featured',
@@ -449,9 +431,7 @@ get_header();
 
 
 
-<?php elseif (get_row_layout() == 'show_featured_posts_list' ): ?>
-  <?php if( get_sub_field('show_featured_list') ): ?>
-    <?php
+<?php elseif (get_row_layout() == 'show_featured_posts_list' ): if( get_sub_field('show_featured_list') ):
        // the query
        $the_query = new WP_Query( array(
          'category_name' => 'resources',
@@ -476,9 +456,7 @@ get_header();
               <?php $main_image = get_sub_field('main_image'); ?>
                 <a href="<?php the_permalink(); ?>"><img class="bottom-image" src="<?php echo $main_image['url'] ?>" alt="<?php echo $main_image['alt'] ?>">
                 </a>
-                  <?php endif; ?>
-                  <?php endwhile; ?>
-                  <?php endif; ?>
+                  <?php endif; endwhile; endif; ?>
             </div>
             <div class="col-sm-12 col-md-6 post">
               <h4><?php the_title(); ?></h4>
@@ -502,154 +480,10 @@ get_header();
 <?php endif; ?>
 
 
-
-
-
-
-
-
-
-
 <!--test2-->
-		<?php endif; ?>
-	<?php endwhile; ?><!--end features module -->
+  <?php endif; endwhile; ?><!--end features module -->
 <?php endif; ?> <!-- end main module-->
 
-<script>
-$( document ).ready(function() {
-  (function() {
 
-  	function init(item) {
-  		var items = item.querySelectorAll('.slides li'),
-          current = 0,
-          autoUpdate = true,
-          timeTrans = 7000;
-
-  		//create nav
-  		var nav = document.createElement('nav');
-  		nav.className = 'nav_arrows';
-
-  		//create button prev
-  		var prevbtn = document.createElement('button');
-  		prevbtn.className = 'prev';
-  		prevbtn.setAttribute('aria-label', 'Prev');
-
-  		//create button next
-  		var nextbtn = document.createElement('button');
-  		nextbtn.className = 'next';
-  		nextbtn.setAttribute('aria-label', 'Next');
-
-      //create counter
-      var counter = document.createElement('div');
-      counter.className = 'counter';
-      counter.innerHTML = "<span>1</span><span>"+items.length+"</span>";
-
-  		if (items.length > 1) {
-  			nav.appendChild(prevbtn);
-        nav.appendChild(counter);
-  			nav.appendChild(nextbtn);
-  			item.appendChild(nav);
-  		}
-
-  		items[current].className = "current";
-  		if (items.length > 1) items[items.length-1].className = "prev_slide";
-
-  		var navigate = function(dir) {
-  			items[current].className = "";
-
-  			if (dir === 'right') {
-  				current = current < items.length-1 ? current + 1 : 0;
-  			} else {
-  				current = current > 0 ? current - 1 : items.length-1;
-  			}
-
-  			var	nextCurrent = current < items.length-1 ? current + 1 : 0,
-  				prevCurrent = current > 0 ? current - 1 : items.length-1;
-
-  			items[current].className = "current";
-  			items[prevCurrent].className = "prev_slide";
-  			items[nextCurrent].className = "";
-
-  			//update counter
-  			counter.firstChild.textContent = current + 1;
-  		}
-
-      item.addEventListener('mouseenter', function() {
-  			autoUpdate = false;
-  		});
-
-  		item.addEventListener('mouseleave', function() {
-  			autoUpdate = true;
-  		});
-
-  		setInterval(function() {
-  			if (autoUpdate) navigate('right');
-  		},timeTrans);
-
-  		prevbtn.addEventListener('click', function() {
-  			navigate('left');
-  		});
-
-  		nextbtn.addEventListener('click', function() {
-  			navigate('right');
-  		});
-
-  		//keyboard navigation
-  		document.addEventListener('keydown', function(ev) {
-  			var keyCode = ev.keyCode || ev.which;
-  			switch (keyCode) {
-  				case 37:
-  					navigate('left');
-  					break;
-  				case 39:
-  					navigate('right');
-  					break;
-  			}
-  		});
-
-  		// swipe navigation
-  		// from http://stackoverflow.com/a/23230280
-  		item.addEventListener('touchstart', handleTouchStart, false);
-  		item.addEventListener('touchmove', handleTouchMove, false);
-  		var xDown = null;
-  		var yDown = null;
-  		function handleTouchStart(evt) {
-  			xDown = evt.touches[0].clientX;
-  			yDown = evt.touches[0].clientY;
-  		};
-  		function handleTouchMove(evt) {
-  			if ( ! xDown || ! yDown ) {
-  				return;
-  			}
-
-  			var xUp = evt.touches[0].clientX;
-  			var yUp = evt.touches[0].clientY;
-
-  			var xDiff = xDown - xUp;
-  			var yDiff = yDown - yUp;
-
-  			if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
-  				if ( xDiff > 0 ) {
-  					/* left swipe */
-  					navigate('right');
-  				} else {
-  					navigate('left');
-  				}
-  			}
-  			/* reset values */
-  			xDown = null;
-  			yDown = null;
-  		};
-
-
-  	}
-
-  	[].slice.call(document.querySelectorAll('.cd-slider')).forEach( function(item) {
-  		init(item);
-  	});
-
-  })();
-});
-</script>
 <?php
 get_footer();

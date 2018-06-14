@@ -1089,3 +1089,9 @@ will-change: transform, opacity;
 .blog-post {
   margin-bottom: 2rem;
 }
+.copyright-container {
+  @include for-tablet-small-up {
+  position: absolute;
+  right:2rem;
+  }
+}

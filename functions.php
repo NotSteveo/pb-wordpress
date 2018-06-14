@@ -180,6 +180,7 @@ require_once('bootstrap/bs4navwalker.php');
 
 // Register WordPress nav menu
 register_nav_menu('top', 'Top menu');
+register_nav_menu('bottom', 'Bottom menu');
 
 add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
 
